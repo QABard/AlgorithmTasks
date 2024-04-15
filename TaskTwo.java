@@ -10,8 +10,9 @@ public class MyClass {
             System.out.println("Необходимо было ввести число больше 0 и меньше 2147483647. Конец программы");
             return;
         }
-        for (int i = 1; i <= number; i++) {
-            sum = sum + i;
+        while (number > 0) {
+            sum = sum + number % 10;
+            number = number / 10;
         }
         System.out.println(sum);
     }
