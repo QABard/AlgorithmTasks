@@ -2,35 +2,24 @@ import java.util.Scanner;
 
 public class MyClass {
     public static void main(String[] args) {
-        System.out.println("Введите число больше нуля");
+
         var scanner = new Scanner(System.in);
-        double number1 = scanner.nextDouble();
-        double number2 = scanner.nextDouble();
-        double number3 = scanner.nextDouble();
+        double maxNumber = 0;
 
+        for (int i = 1; i <= 3; i++) {
+            System.out.println("Введите три раза число больше нуля");
+            double number = scanner.nextDouble();
 
-        if (number1 <= 0 || number1 > Double.MAX_VALUE) {
-            System.out.println("Необходимо было ввести число больше 0 и меньше 2147483647. Конец программы");
-            return;
-        }
-        if (number2 <= 0 || number2 > Double.MAX_VALUE) {
-            System.out.println("Необходимо было ввести число больше 0 и меньше 2147483647. Конец программы");
-            return;
-        }
-        if (number3 <= 0 || number3 > Double.MAX_VALUE) {
-            System.out.println("Необходимо было ввести число больше 0 и меньше 2147483647. Конец программы");
-            return;
-        }
+            if (number <= 0 || number >= Double.MAX_VALUE) {
+                System.out.println("Необходимо было ввести числа больше 0 и меньше 1.7976931348623157E308. Конец программы");
+                return;
+            }
 
-        if (number1 > number2 && number1 > number3) {
-            System.out.println(number1);
+            if (number >= maxNumber) {
+                maxNumber = number;
+            }
         }
-        if (number2 > number1 && number2 > number3) {
-            System.out.println(number2);
-        }
-        if (number3 > number2 && number3 > number1) {
-            System.out.println(number3);
-        }
+        System.out.println(maxNumber);
     }
 }
 //Даны три числа с плавающей точкой (double, float).
