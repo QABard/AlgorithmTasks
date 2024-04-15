@@ -8,7 +8,7 @@ public class MyClass {
         System.out.println("Введите три раза число");
         for (int i = 1; i <= 3; i++) {
             System.out.println("Введите число " + i + "-ое число");
-            double number = scanner.nextDouble();
+            var number = scanner.nextDouble();
 
             if (number <= -Double.MAX_VALUE || number >= Double.MAX_VALUE) {
                 System.out.println("Необходимо было ввести числа больше 4.9E-324 и меньше 1.7976931348623157E308. Конец программы");
